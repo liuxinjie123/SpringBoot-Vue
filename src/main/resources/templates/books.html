@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书列表</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td th:each="item:${data.header}">
+            <span th:text="${item}"></span>
+        </td>
+    </tr>
+    <tr th:each="map, index:${data.list}">
+        <td th:text="${index.index+1}"></td>
+        <td th:each="item:${map}">
+            <span th:text="${item.value}"></span>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

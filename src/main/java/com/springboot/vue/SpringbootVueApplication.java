@@ -8,10 +8,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class SpringbootVueApplication {
 
 	public static void main(String[] args) {
-        SpringApplicationBuilder builder = new SpringApplicationBuilder(SpringbootVueApplication.class);
-        builder.application().setAdditionalProfiles("dev");
-        builder.run(args);
-//		SpringApplication.run(SpringbootVueApplication.class, args);
+//        SpringApplicationBuilder builder = new SpringApplicationBuilder(SpringbootVueApplication.class);
+//        builder.application().setAdditionalProfiles("dev");
+//        builder.run(args);
+		SpringApplication.run(SpringbootVueApplication.class, args);
 	}
 
 }

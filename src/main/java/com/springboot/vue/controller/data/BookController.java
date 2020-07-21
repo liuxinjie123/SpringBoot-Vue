@@ -1,4 +1,4 @@
-package com.springboot.vue.controller;
+package com.springboot.vue.controller.data;
 
 import com.springboot.vue.common.ThreeBodyBook;
 import org.springframework.beans.factory.annotation.Autowired;

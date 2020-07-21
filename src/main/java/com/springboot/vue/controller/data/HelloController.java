@@ -1,4 +1,4 @@
-package com.springboot.vue.controller;
+package com.springboot.vue.controller.data;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
