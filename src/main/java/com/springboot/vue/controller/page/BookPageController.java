@@ -22,6 +22,8 @@ public class BookPageController {
         bookList.add(new Book("ISBN-2006-001", "三体", "刘慈欣"));
         List<String> header = Arrays.asList("序号", "编号", "名称", "作者");
         data.setHeader(header);
+        List<String> keyList = Arrays.asList("code", "name", "author");
+        data.setKeyList(keyList);
         data.setList(bookList);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("data", data);

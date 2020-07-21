@@ -13,8 +13,8 @@
     </tr>
     <tr th:each="map, index:${data.list}">
         <td th:text="${index.index+1}"></td>
-        <td th:each="item:${map}">
-            <span th:text="${item.value}"></span>
+        <td th:each="key:${data.keyList}">
+            <span th:text="${map.get(key)}"></span>
         </td>
     </tr>
 </table>

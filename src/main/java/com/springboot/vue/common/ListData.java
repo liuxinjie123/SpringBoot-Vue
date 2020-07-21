@@ -15,6 +15,7 @@ import java.util.TreeMap;
 @NoArgsConstructor
 public class ListData<T> implements Serializable {
     private List<String> header = new ArrayList<>();
+    private List<String> keyList = new ArrayList<>();
     private List<T> list = new ArrayList<>();
 
     public List<String> getHeader() {
@@ -23,6 +24,14 @@ public class ListData<T> implements Serializable {
 
     public void setHeader(List<String> header) {
         this.header = header;
+    }
+
+    public List<String> getKeyList() {
+        return keyList;
+    }
+
+    public void setKeyList(List<String> keyList) {
+        this.keyList = keyList;
     }
 
     public List<Map<String, Object>> getList() {
