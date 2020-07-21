@@ -27,7 +27,7 @@ public class BookPageController {
         data.setList(bookList);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("data", data);
-        modelAndView.setViewName("books");
+        modelAndView.setViewName("list");
         return modelAndView;
     }
 }
