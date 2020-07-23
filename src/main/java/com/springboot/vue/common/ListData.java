@@ -14,9 +14,18 @@ import java.util.TreeMap;
 
 @NoArgsConstructor
 public class ListData<T> implements Serializable {
+    private String title;
     private List<String> header = new ArrayList<>();
     private List<String> keyList = new ArrayList<>();
     private List<T> list = new ArrayList<>();
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public List<String> getHeader() {
         return header;
