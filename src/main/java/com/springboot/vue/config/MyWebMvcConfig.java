@@ -6,6 +6,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -36,6 +37,9 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/static/");
     }
 
+    /**
+     * 跨域访问控制
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/hello/**")
@@ -43,5 +47,12 @@ public class MyWebMvcConfig implements WebMvcConfigurer {
                 .allowedMethods("*")
                 .maxAge(1800)
                 .allowedOrigins("http://localhost:8006");
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new MyInterceptor())
+                .addPathPatterns("/**")
+                .excludePathPatterns("/hello/hello");
     }
 }
