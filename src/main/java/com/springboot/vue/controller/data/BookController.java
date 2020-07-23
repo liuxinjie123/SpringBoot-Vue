@@ -1,10 +1,13 @@
 package com.springboot.vue.controller.data;
 
+import com.alibaba.fastjson.JSON;
 import com.springboot.vue.common.Result;
 import com.springboot.vue.common.ThreeBodyBook;
+import com.springboot.vue.dto.Author;
 import com.springboot.vue.vo.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,5 +34,10 @@ public class BookController {
         bookList.add(new Book("ISBN-2001-001", "平凡的世界", "路遥", LocalDateTime.now(), BigDecimal.valueOf(100.0)));
         bookList.add(new Book("ISBN-2006-001", "三体", "刘慈欣", LocalDateTime.now(), BigDecimal.valueOf(100.0)));
         return Result.success(bookList);
+    }
+
+    @GetMapping("/initBinder")
+    public Result testInitBinder(@ModelAttribute("b")com.springboot.vue.dto.Book book, @ModelAttribute("a")Author author) {
+        return Result.success(JSON.toJSONString(book) + JSON.toJSONString(author));
     }
 }

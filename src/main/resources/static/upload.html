@@ -6,8 +6,16 @@
 </head>
 <body>
 <form action="/file/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="file" value="请选择文件" />
-    <input type="submit" value="上传" />
+    <input type="file" name="file" value="请选择文件" >
+    <input type="submit" value="上传" >
 </form>
+<br />
+<br />
+<form action="/file/uploads" method="post" enctype="multipart/form-data">
+    <input type="file" name="files" value="请选择文件" multiple>
+    <input type="submit" value="上传" >
+</form>
+<br />
+<br />
 </body>
 </html>

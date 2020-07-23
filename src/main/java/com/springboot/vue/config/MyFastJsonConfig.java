@@ -17,7 +17,7 @@ public class MyFastJsonConfig {
         config.setDateFormat("yyyy-MM-dd");
         config.setCharset(Charset.forName("UTF-8"));
         config.setSerializerFeatures(
-                SerializerFeature.WriteClassName,
+//                SerializerFeature.WriteClassName,
                 SerializerFeature.WriteMapNullValue,
                 SerializerFeature.PrettyFormat,
                 SerializerFeature.WriteNullListAsEmpty,

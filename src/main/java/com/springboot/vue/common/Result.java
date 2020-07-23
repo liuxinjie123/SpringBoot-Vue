@@ -1,28 +1,37 @@
 package com.springboot.vue.common;
 
 import com.alibaba.fastjson.JSON;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
 @NoArgsConstructor
-@AllArgsConstructor
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
+    private static final String CODE_SUCCESS = "0";
+    private static final String MSG_SUCCESS = "请求成功";
+
+    private static final String CODE_ERROR = "1";
+    private static final String MSG_ERROR = "请求异常";
+
     public String code;
     public String msg;
-    public Object data;
+    public T data;
+
+    private boolean isSuccess;
 
     public Result(String code, String msg) {
         this.code = code;
         this.msg = msg;
     }
 
-    private static final String CODE_SUCCESS = "0";
-    private static final String MSG_SUCCESS = "请求成功";
+    public Result(String code, String msg, T data) {
+        this(code, msg);
+        this.data = data;
+    }
 
-    private static final String CODE_ERROR = "1";
-    private static final String MSG_ERROR = "请求异常";
+    public boolean isSuccess() {
+        return this.code.equals(CODE_SUCCESS);
+    }
 
     public static Result success() {
         return new Result(CODE_SUCCESS, MSG_SUCCESS);
@@ -37,10 +46,8 @@ public class Result implements Serializable {
     }
 
     public static Result success(Object data) {
-        if (data instanceof java.lang.String) {
-            return new Result(CODE_SUCCESS, String.valueOf(data));
-        } else {
-            return new Result(CODE_SUCCESS, MSG_SUCCESS, JSON.toJSONString(data));
-        }
+        return new Result(CODE_SUCCESS, MSG_SUCCESS, JSON.toJSONString(data));
     }
+
+
 }
