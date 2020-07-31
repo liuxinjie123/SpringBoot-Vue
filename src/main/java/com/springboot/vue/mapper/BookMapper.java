@@ -1,7 +1,6 @@
 package com.springboot.vue.mapper;
 
 import com.springboot.vue.entity.BookEntity;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 

@@ -65,7 +65,9 @@ public class BookPageController {
     public ModelAndView bookListPage2() {
         ListData data = new ListData();
         data.setTitle("图书列表");
-        List<BookEntity> bookList = bookNewService.findAll();
+//        List<BookEntity> bookList = bookNewService.findAll();
+        List<BookEntity> bookList = new ArrayList<>();
+        bookList.add(bookNewService.findById(1L));
         List<String> header = Arrays.asList("序号", "名称2", "作者", "创建时间");
         data.setHeader(header);
         List<String> keyList = Arrays.asList("name", "author", "createTime");
