@@ -16,8 +16,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-@RequestMapping(value = "/book")
+@RestController("BookController")
+@RequestMapping(value = "/d/book")
 public class BookController {
     @Autowired
     ThreeBodyBook threeBodyBook;
@@ -40,4 +40,6 @@ public class BookController {
     public Result testInitBinder(@ModelAttribute("b")com.springboot.vue.dto.Book book, @ModelAttribute("a")Author author) {
         return Result.success(JSON.toJSONString(book) + JSON.toJSONString(author));
     }
+
+
 }
