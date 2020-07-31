@@ -18,7 +18,8 @@
     <select id="findAll" resultType="com.springboot.vue.entity.BookEntity">
         select
         <include refid="all_columns_to_object" />
-        from book;
+        from book
+        order by create_time desc;
     </select>
 
     <insert id="add" parameterType="com.springboot.vue.entity.BookEntity">
