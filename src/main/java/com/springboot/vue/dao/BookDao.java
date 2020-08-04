@@ -24,7 +24,7 @@ public class BookDao {
     }
 
     public List<BookEntity> findAll() {
-        return jdbcTemplateOne.query("SELECT * FROM book ORDER BY create_time DESC",
+        return jdbcTemplateOne.query("SELECT * FROM book ORDER BY id DESC",
                 new BeanPropertyRowMapper<>(BookEntity.class));
     }
 }
