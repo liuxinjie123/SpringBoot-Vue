@@ -1,5 +1,7 @@
 package com.springboot.vue.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.springboot.vue.config.JsonLongSerializer;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -9,6 +11,7 @@ public class UserDto implements Serializable {
     /**
      * id
      */
+    @JsonSerialize(using = JsonLongSerializer.class)
     private Long id;
 
     /**
